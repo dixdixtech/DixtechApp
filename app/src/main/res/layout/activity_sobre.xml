@@ -6,4 +6,168 @@
     android:layout_height="match_parent"
     tools:context=".Sobre">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnhomeinfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descHome"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btnmapinfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="100dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descMap"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/btnhomeinfo"
+        app:layout_constraintEnd_toStartOf="@+id/btnuserinfo"
+        app:layout_constraintStart_toEndOf="@+id/btnhomeinfo"
+        app:layout_constraintTop_toTopOf="@+id/btnhomeinfo"
+        app:srcCompat="@drawable/map"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imginfo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="100dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descInfo"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/btnhomeinfo"
+        app:layout_constraintEnd_toStartOf="@+id/btnuserinfo"
+        app:layout_constraintStart_toEndOf="@+id/btnhomeinfo"
+        app:layout_constraintTop_toTopOf="@+id/btnhomeinfo"
+        app:srcCompat="@drawable/info"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btnuserinfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="30dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descUser"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/btnhomeinfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnhomeinfo"
+        app:srcCompat="@drawable/usuario"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imglogoinfo"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/descLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logoazulfull" />
+
+            <TextView
+                android:id="@+id/txtsobre"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/amiko"
+                android:text="@string/sobre"
+                android:textAlignment="center"
+                android:textColor="@color/blue_100"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imglogoinfo" />
+
+            <ImageButton
+                android:id="@+id/btnface"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="175dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/descFacebook"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtsobre"
+                app:srcCompat="@drawable/facebook"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <ImageButton
+                android:id="@+id/btnlinkedin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="175dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/descLinkedin"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/btnface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnface"
+                app:srcCompat="@drawable/linkedin" />
+
+            <ImageButton
+                android:id="@+id/btninsta"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="175dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/descInstagram"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnface"
+                app:srcCompat="@drawable/instagram" />
+
+            <TextView
+                android:id="@+id/txtversao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/versao"
+                android:textAlignment="center"
+                android:textColor="@color/blue_100"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtsobre"
+                app:layout_constraintStart_toStartOf="@+id/txtsobre"
+                app:layout_constraintTop_toBottomOf="@+id/txtsobre" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

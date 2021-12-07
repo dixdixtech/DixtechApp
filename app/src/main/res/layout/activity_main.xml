@@ -6,13 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imglogohome"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/descLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoazulfull" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imghome"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/descHome"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ImageButton
+        android:id="@+id/btnmaphome"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="100dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descMap"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imghome"
+        app:layout_constraintEnd_toStartOf="@+id/btnuserhome"
+        app:layout_constraintStart_toEndOf="@+id/imghome"
+        app:layout_constraintTop_toTopOf="@+id/imghome"
+        app:srcCompat="@drawable/map"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btninfohome"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="100dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descInfo"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imghome"
+        app:layout_constraintEnd_toStartOf="@+id/btnuserhome"
+        app:layout_constraintStart_toEndOf="@+id/imghome"
+        app:layout_constraintTop_toTopOf="@+id/imghome"
+        app:srcCompat="@drawable/info"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btnuserhome"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="30dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descUser"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imghome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imghome"
+        app:srcCompat="@drawable/usuario"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

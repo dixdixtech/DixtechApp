@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dixtechapp">
+    package="com.example.dixtechapp" >
     
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -12,40 +12,44 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DixtechApp">
-        <activity
-            android:name=".Servicos"
-            android:exported="false" />
-        <activity
-            android:name=".Cliente"
-            android:exported="false" />
-        <activity
-            android:name=".Atividades"
-            android:exported="false" />
-        <activity
-            android:name=".Ler"
-            android:exported="false" />
-        <activity
-            android:name=".Gravar"
-            android:exported="false" />
-        <activity
-            android:name=".Usuario"
-            android:exported="false" />
-        <activity
-            android:name=".Sobre"
-            android:exported="false" />
-        <activity
-            android:name=".Splash"
-            android:exported="false" />
+        android:theme="@style/Theme.DixtechApp" >
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" />
+        <activity
+            android:name=".Servicos"
+            android:exported="true" />
+        <activity
+            android:name=".Cliente"
+            android:exported="true" />
+        <activity
+            android:name=".Atividades"
+            android:exported="true" />
+        <activity
+            android:name=".Ler"
+            android:exported="true" />
+        <activity
+            android:name=".Gravar"
+            android:exported="true" />
+        <activity
+            android:name=".Usuario"
+            android:exported="true" />
+        <activity
+            android:name=".Sobre"
+            android:exported="true" />
+        <activity
+            android:name=".Splash"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
