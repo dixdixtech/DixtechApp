@@ -78,7 +78,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -154,6 +153,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnface"
                 app:srcCompat="@drawable/instagram" />
+
+            <ImageButton
+                android:id="@+id/btngithub"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="100dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/descGit"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnface"
+                app:srcCompat="@drawable/github" />
 
             <TextView
                 android:id="@+id/txtversao"

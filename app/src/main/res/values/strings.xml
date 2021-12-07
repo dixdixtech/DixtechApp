@@ -18,7 +18,12 @@
     <string name="textLogin">Já possui uma conta?\nFaça login clicando aqui</string>
     <string name="versao">Versão do Aplicativo: 1.0</string>
     <string name="sobre">SOBRE A NOSSA EMPRESA\n\nA Dix Tech é uma empresa start-up de tecnologia com função de oferecer serviços para outras empresas que precisam de sistemas ou sites</string>
-
+    <string name="addbio">Adicione uma Biografia</string>
+    <string name="bio">Biografia</string>
+    <string name="interno">ARMAZENAMENTO INTERNO</string>
+    <string name="externo">ARMAZENAMENTO EXTERNO</string>
+    <string name="gravar">Gravar</string>
+    <string name="ler">Ler</string>
 
     <string name="descHome">Botão home</string>
     <string name="descUser">Botão/imagem de usuário</string>
@@ -32,6 +37,11 @@
     <string name="descFacebook">Botão para acessar a página do facebook da empresa</string>
     <string name="descInstagram">Botão para acessar a página do instagram da empresa</string>
     <string name="descLinkedin">Botão para acessar a página do linkedin da empresa</string>
-
+    <string name="descGit">Botão para acessar a página do GitHub da empresa</string>
     <string name="chNav">Escolha o aplicativo</string>
+    <string name="descgravInterno">Botão de salvamento no armazenamento interno</string>
+    <string name="descgravExterno">Botão de salvamento no armazenamento Externo</string>
+    <string name="desclerInterno">Botão de ler o armazenamento Interno</string>
+    <string name="desclerExterno">Botão de ler o armazenamento Externo</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

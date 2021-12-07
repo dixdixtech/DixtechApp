@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 public class Sobre extends AppCompatActivity {
     
-    ImageButton botaoFace, botaoLinkedin, botaoInsta, btnhome, btnmap, btnuser;
+    ImageButton botaoFace, botaoLinkedin, botaoInsta, botaoGit, btnhome, btnmap, btnuser;
 
 
 
@@ -37,7 +37,7 @@ public class Sobre extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent map = new Intent(getApplicationContext(), Mapa.class);
+                Intent map = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(map);
             }
         });
@@ -80,44 +80,28 @@ public class Sobre extends AppCompatActivity {
 
             }
         });
+
+        botaoGit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://github.com/dixdixtech");
+                Intent it = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(Intent.createChooser(it, getString(R.string.chNav)));
+
+            }
+        });
     }
     
     private void IniciarComponentes(){
         botaoFace = findViewById(R.id.btnface);
         botaoLinkedin = findViewById(R.id.btnlinkedin);
         botaoInsta = findViewById(R.id.btninsta);
+        botaoGit = findViewById(R.id.btngithub);
         btnhome = findViewById(R.id.btnhomeinfo);
         btnmap = findViewById(R.id.btnmapinfo);
         btnuser = findViewById(R.id.btnuserinfo);
     }
     
-    public void GravarI(View view) {
-        Intent it = new Intent(this, Gravar.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.INTERNAL);
-        startActivity(it);
-    }
 
-    public void LerI(View view) {
-        Intent it = new Intent(this, Ler.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.INTERNAL);
-        startActivity(it);
-
-    }
-
-
-    public void GravarE(View view) {
-        Intent it = new Intent(this, Gravar.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.EXTERNAL);
-        startActivity(it);
-
-    }
-
-
-    public void LerE(View view) {
-        Intent it = new Intent(this, Ler.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.EXTERNAL);
-        startActivity(it);
-
-    }
 
 }

@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/drawable/container_components.xml" value="0.20043290043290043" />
+        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/drawable/container_user.xml" value="0.20043290043290043" />
+        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/drawable/edit_text.xml" value="0.20043290043290043" />
+        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/drawable/ic_cake.xml" value="0.20043290043290043" />
+        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/drawable/ic_lock.xml" value="0.20043290043290043" />
         <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/layout/activity_atividades.xml" value="0.18701298701298702" />
+        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/layout/activity_bio.xml" value="0.22" />
         <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/layout/activity_sobre.xml" value="0.25" />
         <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/layout/activity_splash.xml" value="0.20925925925925926" />
-        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/layout/activity_usuario.xml" value="0.18701298701298702" />
+        <entry key="..\:/Users/Gustavo/AndroidStudioProjects/DixtechApp/app/src/main/res/layout/activity_usuario.xml" value="0.25" />
       </map>
     </option>
   </component>

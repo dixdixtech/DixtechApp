@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent map = new Intent(getApplicationContext(), Mapa.class);
+                Intent map = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(map);
             }
         });

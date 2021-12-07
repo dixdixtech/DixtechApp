@@ -1,9 +1,23 @@
 package com.example.dixtechapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
 import com.example.dixtechapp.Armazenamentos.Type;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Gravar extends AppCompatActivity {
     

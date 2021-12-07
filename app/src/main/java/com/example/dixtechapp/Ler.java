@@ -1,9 +1,20 @@
 package com.example.dixtechapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.dixtechapp.Armazenamentos.Type;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Ler extends AppCompatActivity {
     
