@@ -65,7 +65,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-    
+    //MÉTODOS PARA A TABELA SERVICO
     void addServico(String nome, String desc){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -79,7 +79,20 @@ public class DBHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Sucesso ao adicionar", Toast.LENGTH_SHORT).show();
         }
     }
-
+    
+    Cursor readAllData(){
+        String query = "SELECT * FROM tbl_servico";
+        SQLiteDatabase db = this.getReadableDatabase();
+        
+        Cursor cursor = null;
+        if(db != null){
+            db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+    //
+    
+    // MÉTODOS PARA A TABELA FUNCIONARIO
     public Boolean insertFunc(String nome_func, String cpf, String cargo, String senha, String email_func, String data_nasc_func, String tel_func){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues v = new ContentValues();
@@ -115,4 +128,5 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+    //
 }
