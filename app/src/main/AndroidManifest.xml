@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DixtechApp">
         <activity
+            android:name=".FormCadastro"
+            android:exported="false" />
+        <activity
+            android:name=".FormLogin"
+            android:exported="false" />
+        <activity
             android:name=".Bio"
             android:exported="false" />
         <!--

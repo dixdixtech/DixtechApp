@@ -29,6 +29,12 @@
     <string name="ler">Ler</string>
     <string name="descserv">Descrição do Serviço</string>
     <string name="nomeserv">Nome do Serviço</string>
+    <string name="gerenciar">Gerenciar</string>
+    <string name="cliente">Cliente</string>
+    <string name="servicos">Serviços</string>
+    <string name="atividades">Atividades</string>
+    <string name="irpara">Ir Para</string>
+    <string name="confirmsenha">Confirmar Senha</string>
 
     <string name="descHome">Botão home</string>
     <string name="descUser">Botão/imagem de usuário</string>

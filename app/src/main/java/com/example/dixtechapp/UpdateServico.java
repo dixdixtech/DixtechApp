@@ -35,7 +35,7 @@ public class UpdateServico extends AppCompatActivity {
         //Setando a actionbar com o title depois do método getSupportActionBar  
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
-            ab.setTitle(title);
+            ab.setTitle(nome);
         }
 
         btn_update.setOnClickListener(new View.OnClickListener() {
@@ -68,8 +68,8 @@ public class UpdateServico extends AppCompatActivity {
             
 
             //Setando dados na intent
-            title_input.setText(nome);
-            author_input.setText(desc);
+            nm_serv_updt.setText(nome);
+            desc_serv_updt.setText(desc);
             Log.d("stev", nome+" "+desc);
         }else{
             Toast.makeText(this, "Não há dados.", Toast.LENGTH_SHORT).show();

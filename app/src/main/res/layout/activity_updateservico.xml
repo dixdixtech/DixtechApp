@@ -10,7 +10,7 @@
    
     <View
         android:id="@+id/updateServ"
-        style="@style/Adicionar"
+        style="@style/CadastroComponents"
         android:background="@drawable/edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtupdtserv"
+         app:layout_constraintTop_toTopOf="@id/updateServ"
         tools:ignore="TouchTargetSizeCheck" />
   
     <EditText
@@ -38,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="@string/descserv"
@@ -47,35 +48,35 @@
         android:textColorHint="@color/grey200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtupdtserv"
+        app:layout_constraintTop_toBottomOf="@+id/edittxt_nm_serv_updt"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/btnupdateserv"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="@string/descaddserv"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/updateServ"
         app:layout_constraintStart_toStartOf="@+id/updateServ"
-        app:layout_constraintTop_toBottomOf="@+id/edittxt_nm_serv_updt"
+        app:layout_constraintTop_toBottomOf="@+id/edittxt_desc_serv_updt"
         tools:text="@string/alterar" />
     
     <Button
         android:id="@+id/btndeleteserv"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="@string/descDelete"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/updateServ"
         app:layout_constraintStart_toStartOf="@+id/updateServ"
-        app:layout_constraintTop_toBottomOf="@+id/edittxt_nm_serv_updt"
+        app:layout_constraintTop_toBottomOf="@+id/btnupdateserv"
         tools:text="@string/deletar" />
 
     <TextView
@@ -84,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/amiko"
-        android:text="@string/adicionar"
+        android:text="@string/alterar"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"

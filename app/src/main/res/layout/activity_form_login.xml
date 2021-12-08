@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_100"
+    tools:context=".FormLogin">
+
+    <TextView
+        android:id="@+id/txtentrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/entrar"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/loginComponents"
+        style="@style/ContainerComponents"
+        android:background="@drawable/edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtentrar" />
+
+    <TextView
+        android:id="@+id/txttelacadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/textCadastro"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginComponents" />
+
+    <EditText
+        android:id="@+id/edittextcpflog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/cpf"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="@color/grey100"
+        android:textColorHint="@color/grey200"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/loginComponents"
+        app:layout_constraintStart_toStartOf="@+id/loginComponents"
+        app:layout_constraintTop_toTopOf="@+id/loginComponents"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/edittextsenhalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawableEnd="@drawable/ic_lock"
+        android:ems="10"
+        android:hint="@string/senha"
+        android:inputType="textPersonName"
+        android:textColor="@color/grey100"
+        android:textColorHint="@color/grey200"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/edittextcpflog"
+        app:layout_constraintStart_toStartOf="@+id/edittextcpflog"
+        app:layout_constraintTop_toBottomOf="@+id/edittextcpflog"
+        tools:ignore="TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/btncadastro"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/entrar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/edittextsenhalog"
+        app:layout_constraintStart_toStartOf="@+id/edittextsenhalog"
+        app:layout_constraintTop_toBottomOf="@+id/edittextsenhalog"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

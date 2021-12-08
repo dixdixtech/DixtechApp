@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class AddServ extends AppCompatActivity {
@@ -18,14 +20,14 @@ public class AddServ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formservico);
         getSupportActionBar().hide();
-        iniciarComponentes():
+        iniciarComponentes();
         
         btnaddserv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               DBHelper db = new DBHelper(AddServ.this);
-              db.addServico(txtnomeserv.getText().toString().toTrim(),
-                           txtdescserv.getText().toString().toTrim());
+              db.addServico(txtnomeserv.getText().toString().trim(),
+                           txtdescserv.getText().toString().trim());
             }
         });
         

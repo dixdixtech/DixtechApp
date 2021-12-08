@@ -1,19 +1,27 @@
 package com.example.dixtechapp;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Usuario extends AppCompatActivity {
 
-ImageButton btnhome, btnmap, btninfo;
+ImageButton btnhome, btnmap, btninfo, btnfoto;
 ImageView imgviewfoto;
-Button btnbio, btnlogout, btnfoto;
+Button btnbio, btnlogout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,7 @@ Button btnbio, btnlogout, btnfoto;
         IniciarComponentes();
 
         btnfoto.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
                 if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
@@ -78,24 +87,26 @@ Button btnbio, btnlogout, btnfoto;
 
     private void  escolherImagem(){
         Intent i = new Intent(Intent.ACTION_PICK);
-        I.setType("image/*");
-        startActivityForResult(intent, 1000);
+        i.setType("image/*");
+        startActivityForResult(i, 1000);
     }
     
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
-        if(resultCode == RESULT_OK && requestCode == 1000){
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 1000) {
             imgviewfoto.setImageURI(data.getData());
         }
     }
     
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch(request){
-            case 1001:{
-                if(grantResult.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    escolherImagem()
-                }else{
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 1001: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    escolherImagem();
+                } else {
                     Toast.makeText(this, "Permissão negada", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -109,7 +120,7 @@ Button btnbio, btnlogout, btnfoto;
         btnbio = findViewById(R.id.btnbio);
         btnlogout = findViewById(R.id.btnlogoff);
         btnfoto = findViewById(R.id.btnfotouser);
-        imgviewfoto = findViewById(R.id.imageView);
+        imgviewfoto = findViewById(R.id.btnfotouser);
     }
 
 

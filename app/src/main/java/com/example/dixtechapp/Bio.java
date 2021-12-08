@@ -13,6 +13,7 @@ public class Bio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bio);
 
+        getSupportActionBar().hide();
 
     }
 

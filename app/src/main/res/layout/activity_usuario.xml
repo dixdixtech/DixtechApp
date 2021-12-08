@@ -97,93 +97,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imglogouser" />
 
-            <ImageView
-                android:id="@+id/imageView"
+            <ImageButton
+                android:id="@+id/btnfotouser"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:background="#00FFFFFF"
                 android:contentDescription="@string/descUser"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_user"
                 app:layout_constraintBottom_toBottomOf="@+id/containerUser"
                 app:layout_constraintEnd_toEndOf="@+id/containerUser"
+                app:layout_constraintHorizontal_bias="0.566"
                 app:layout_constraintStart_toStartOf="@+id/containerUser"
-                app:layout_constraintTop_toTopOf="@+id/containerUser" />
-
-            <ImageView
-                android:id="@+id/iconeUser"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="50dp"
-                android:contentDescription="@string/descUser"
-                android:src="@drawable/ic_user"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-            <TextView
-                android:id="@+id/txtnmUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Giuyffhuf"
-                android:textColor="@color/grey100"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/iconeUser"
-                app:layout_constraintStart_toEndOf="@+id/iconeUser"
-                app:layout_constraintTop_toTopOf="@+id/iconeUser" />
-
-            <ImageView
-                android:id="@+id/iconeEmail"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="25dp"
-                android:contentDescription="@string/descEmail"
-                android:src="@drawable/ic_emailescuro"
-                app:layout_constraintEnd_toEndOf="@id/iconeUser"
-                app:layout_constraintStart_toStartOf="@id/iconeUser"
-                app:layout_constraintTop_toBottomOf="@+id/iconeUser" />
-
-            <TextView
-                android:id="@+id/txtemailUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Giuyffhuf"
-                android:textColor="@color/grey100"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/iconeEmail"
-                app:layout_constraintStart_toStartOf="@+id/txtnmUsuario"
-                app:layout_constraintTop_toTopOf="@+id/iconeEmail" />
-
-            <ImageView
-                android:id="@+id/iconeCargo"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="25dp"
-                android:contentDescription="@string/descEmail"
-                android:src="@drawable/ic_cargoescuro"
-                app:layout_constraintEnd_toEndOf="@id/iconeUser"
-                app:layout_constraintStart_toStartOf="@id/iconeUser"
-                app:layout_constraintTop_toBottomOf="@+id/iconeEmail" />
-
-            <TextView
-                android:id="@+id/txtcargoUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Giuyffhuf"
-                android:textColor="@color/grey100"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/iconeCargo"
-                app:layout_constraintStart_toStartOf="@+id/txtnmUsuario"
-                app:layout_constraintTop_toTopOf="@+id/iconeCargo" />
+                app:layout_constraintTop_toTopOf="@+id/containerUser"
+                app:layout_constraintVertical_bias="0.633" />
 
             <Button
                 android:id="@+id/btnlogoff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="30dp"
                 android:background="@color/blue_100"
                 android:padding="5dp"
@@ -200,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
                 android:background="@color/blue_100"
                 android:padding="5dp"
@@ -210,7 +144,7 @@
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iconeCargo" />
+                app:layout_constraintTop_toBottomOf="@+id/btnfotouser" />
 
             <ImageView
                 android:id="@+id/imglogouser"

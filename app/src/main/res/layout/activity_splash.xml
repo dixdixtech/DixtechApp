@@ -8,7 +8,7 @@
     tools:context=".Splash">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/btnfotouser"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_marginTop="280dp"

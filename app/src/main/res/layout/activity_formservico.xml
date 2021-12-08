@@ -10,7 +10,7 @@
    
     <View
         android:id="@+id/cadastroServ"
-        style="@style/Adicionar"
+        style="@style/ContainerComponents"
         android:background="@drawable/edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         android:textColorHint="@color/grey200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtaddserv"
+        app:layout_constraintTop_toTopOf="@id/cadastroServ"
         tools:ignore="TouchTargetSizeCheck" />
   
     <EditText
@@ -47,21 +47,21 @@
         android:textColorHint="@color/grey200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtaddserv"
+        app:layout_constraintTop_toBottomOf="@+id/edittextnomeserv"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/btnaddserv"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/descaddserv"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/cadastroServ"
         app:layout_constraintStart_toStartOf="@+id/cadastroServ"
-        app:layout_constraintTop_toBottomOf="@+id/edittextnomeserv"
+        app:layout_constraintTop_toBottomOf="@+id/edittextdescserv"
         tools:text="@string/adicionar" />
 
     <TextView

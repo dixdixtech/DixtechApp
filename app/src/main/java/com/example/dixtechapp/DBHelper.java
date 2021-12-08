@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -70,7 +71,7 @@ public class DBHelper extends SQLiteOpenHelper {
     void addServico(String nome, String desc){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        
+
         cv.put("nome_serv", nome);
         cv.put("desc_serv", desc);
         long resultado= db.insert("tbl_servico", null, cv);
@@ -80,18 +81,18 @@ public class DBHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Sucesso ao adicionar", Toast.LENGTH_SHORT).show();
         }
     }
-    
+
     Cursor readAllData(){
         String query = "SELECT * FROM tbl_servico";
         SQLiteDatabase db = this.getReadableDatabase();
-        
+
         Cursor cursor = null;
         if(db != null){
             db.rawQuery(query, null);
         }
         return cursor;
     }
-    
+
     void updateData(String row_id, String nome, String desc){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -122,12 +123,12 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + "tbl_servico");
     }
     //
-    
+
     //MÉTODOS PARA A TABELA CLIENTE
     void addCliente(String cnpj, String nomecli, String telcli, String emailcli, String endereco){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        
+
         cv.put("cnpj", cnpj);
         cv.put("nome_cli", nomecli);
         cv.put("tel_cli", telcli);
@@ -140,18 +141,18 @@ public class DBHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Sucesso ao adicionar", Toast.LENGTH_SHORT).show();
         }
     }
-    
+
     Cursor readAllDataCli(){
         String query = "SELECT * FROM tbl_cliente";
         SQLiteDatabase db = this.getReadableDatabase();
-        
+
         Cursor cursor = null;
         if(db != null){
             db.rawQuery(query, null);
         }
         return cursor;
     }
-    
+
     void updateDataCli(String row_id, String cnpj, String nomecli, String telcli, String emailcli, String endereco){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -185,12 +186,12 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + "tbl_cliente");
     }
     //
-    
+
     //MÉTODOS PARA A TABELA ATIVIDADE
     void addAtividade(String desc, String dtinic, String dtfinal, String nmcli, String nmfunc, String nmserv){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-       
+
         cv.put("desc_atv", desc);
         cv.put("data_inicial", dtinic);
         cv.put("data_final", dtfinal);
@@ -204,18 +205,18 @@ public class DBHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Sucesso ao adicionar", Toast.LENGTH_SHORT).show();
         }
     }
-    
+
     Cursor readAllDataAtv(){
         String query = "SELECT * FROM tbl_atividade";
         SQLiteDatabase db = this.getReadableDatabase();
-        
+
         Cursor cursor = null;
         if(db != null){
             db.rawQuery(query, null);
         }
         return cursor;
     }
-    
+
     void updateDataAtv(String row_id, String desc, String dtinic, String dtfinal, String nmcli, String nmfunc, String nmserv){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -249,7 +250,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + "tbl_atividade");
     }
     //
-    
+
     // MÉTODOS PARA A TABELA FUNCIONARIO
     public Boolean insertFunc(String nome_func, String cpf, String cargo, String senha, String email_func, String data_nasc_func, String tel_func){
         SQLiteDatabase db = this.getWritableDatabase();

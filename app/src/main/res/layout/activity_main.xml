@@ -12,11 +12,41 @@
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:contentDescription="@string/descLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoazulfull" />
+
+    <View
+        android:id="@+id/view2"
+        style="@style/btnview"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/imglogohome"
+        app:layout_constraintTop_toBottomOf="@+id/txtgerenciar" />
+
+    <View
+        android:id="@+id/view3"
+        style="@style/btnview"
+        android:layout_width="150dp"
+
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view"
+        style="@style/btnview"
+        android:layout_width="150dp"
+
+        android:layout_height="100dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -84,4 +114,98 @@
         app:layout_constraintTop_toTopOf="@+id/imghome"
         app:srcCompat="@drawable/usuario"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtgerenciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/gerenciar"
+        android:textAllCaps="true"
+        android:textColor="@color/blue_100"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imglogohome" />
+
+    <TextView
+        android:id="@+id/txtatividade"
+        android:layout_width="81dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/atividades"
+        android:textColor="@color/blue_100"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/txtcliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/cliente"
+        android:textColor="@color/blue_100"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/txtservicos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/servicos"
+        android:textColor="@color/blue_100"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <Button
+        android:id="@+id/btnatividade"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/irpara"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtatividade"
+        app:layout_constraintStart_toStartOf="@+id/txtatividade"
+        app:layout_constraintTop_toBottomOf="@+id/txtatividade"
+        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/btncliente"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/irpara"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/txtcliente" />
+
+    <Button
+        android:id="@+id/btnservicos"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/irpara"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/txtservicos" />
 </androidx.constraintlayout.widget.ConstraintLayout>

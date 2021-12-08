@@ -1,8 +1,30 @@
 package com.example.dixtechapp;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+
 
 public class Servicos extends AppCompatActivity {
 
@@ -12,12 +34,14 @@ public class Servicos extends AppCompatActivity {
     DBHelper db;
     ArrayList<String> id_servico, nome_servico, desc_servico;
     CustomAdapter customAdapter;
+    ImageView empty_imageview;
+    TextView no_data;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicos);
-        iniciarComponentes():
+        iniciarComponentes();
         
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +52,7 @@ public class Servicos extends AppCompatActivity {
             }
         });
         
-        db = new.DBHelper(Servicos.this);
+        db = new DBHelper(Servicos.this);
         id_servico = new ArrayList<>();
         nome_servico = new ArrayList<>();
         desc_servico = new ArrayList<>();
@@ -50,17 +74,19 @@ public class Servicos extends AppCompatActivity {
     }
     
     void guardarDadosEmArrays(){
-        Cursor cursor = meudb.readAllData();
+
+        Cursor cursor = db.readAllData();
         if(cursor.getCount() == 0){
-            Toast.makeText(this, "Não há dados").show();
+            empty_imageview.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
         }else{
-            while(cursor.moveToNext()){
+            while (cursor.moveToNext()){
                 id_servico.add(cursor.getString(0));
                 nome_servico.add(cursor.getString(1));
                 desc_servico.add(cursor.getString(2));
-                
-                
             }
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
         }
     }
     
@@ -79,13 +105,7 @@ public class Servicos extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.delete_all){
-            confirmaDialogo();
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
     
     void confirmaDialogo(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -117,6 +137,8 @@ public class Servicos extends AppCompatActivity {
         btninfo = findViewById(R.id.btninfoserv);
         btnmap = findViewById(R.id.btnmapserv);
         btnuser = findViewById(R.id.btnuserserv);
-        btnhome = = findViewById(R.id.btnhomeserv);
+        btnhome = findViewById(R.id.btnhomeserv);
+        empty_imageview = findViewById(R.id.empty_imageview);
+        no_data = findViewById(R.id.no_data);
         }
 }

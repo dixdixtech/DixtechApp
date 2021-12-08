@@ -26,6 +26,7 @@ public class Ler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ler);
+        getSupportActionBar().hide();
         
         txtTexto = (TextView) findViewById(R.id.txtleitura);
         tipo = (Type) getIntent().getSerializableExtra(Armazenamentos.STORAGE_TYPE);
