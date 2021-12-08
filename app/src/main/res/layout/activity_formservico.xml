@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="@+id/cadastroServ"
         app:layout_constraintStart_toStartOf="@+id/cadastroServ"
         app:layout_constraintTop_toBottomOf="@+id/edittextgravacao"
-        tools:text="@string/gravar" />
+        tools:text="@string/adicionar" />
 
     <TextView
         android:id="@+id/txtaddserv"
