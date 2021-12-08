@@ -23,7 +23,11 @@
     <string name="interno">ARMAZENAMENTO INTERNO</string>
     <string name="externo">ARMAZENAMENTO EXTERNO</string>
     <string name="gravar">Gravar</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="alterar">Alterar</string>
     <string name="ler">Ler</string>
+    <string name="descserv">Descrição do Serviço</string>
+    <string name="nomeserv">Nome do Serviço</string>
 
     <string name="descHome">Botão home</string>
     <string name="descUser">Botão/imagem de usuário</string>
@@ -44,5 +48,7 @@
     <string name="desclerInterno">Botão de ler o armazenamento Interno</string>
     <string name="desclerExterno">Botão de ler o armazenamento Externo</string>
     <string name="descGravar">Botão de gravação geral</string>
+    <string name="descaddserv">Botão de inserção de dados geral</string>
+    <string name="descUpdate">Botão de alteração de dados geral</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>
