@@ -43,9 +43,9 @@ public class Gravar extends AppCompatActivity {
 
         try {
             if (type == Type.INTERNAL) {
-                caminho = salvarInterno(txt);
+                caminho = gravarInterno(txt);
             } else {
-                caminho = salvarExterno(txt);
+                caminho = gravarExterno(txt);
             }
 
             Toast.makeText(this, "Arquivo gravado em" + caminho,Toast.LENGTH_SHORT).show();

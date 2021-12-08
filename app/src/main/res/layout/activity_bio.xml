@@ -11,7 +11,7 @@
         android:id="@+id/txtaddbio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/amiko"
         android:text="@string/addbio"
         android:textColor="@color/white"

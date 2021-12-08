@@ -13,6 +13,13 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <style name="Gravar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
     <style name="Edit_Text">
         <item name="background">@drawable/edit_text</item>
         <item name="android:padding">20dp</item>

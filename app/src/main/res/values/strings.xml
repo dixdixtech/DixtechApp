@@ -43,5 +43,6 @@
     <string name="descgravExterno">Botão de salvamento no armazenamento Externo</string>
     <string name="desclerInterno">Botão de ler o armazenamento Interno</string>
     <string name="desclerExterno">Botão de ler o armazenamento Externo</string>
+    <string name="descGravar">Botão de gravação geral</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>
