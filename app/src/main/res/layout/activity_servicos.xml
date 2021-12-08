@@ -28,8 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imghomeserv"
+    <ImageButton
+        android:id="@+id/btnhomeserv"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="30dp"
@@ -48,10 +48,10 @@
         android:background="#00FFFFFF"
         android:contentDescription="@string/descMap"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imghomeserv"
+        app:layout_constraintBottom_toBottomOf="@+id/btnhomeserv"
         app:layout_constraintEnd_toStartOf="@+id/btnuserserv"
-        app:layout_constraintStart_toEndOf="@+id/imghomeserv"
-        app:layout_constraintTop_toTopOf="@+id/imghomeserv"
+        app:layout_constraintStart_toEndOf="@+id/btnhomeserv"
+        app:layout_constraintTop_toTopOf="@+id/btnhomeserv"
         app:srcCompat="@drawable/map"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -63,10 +63,10 @@
         android:background="#00FFFFFF"
         android:contentDescription="@string/descInfo"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imghomeserv"
+        app:layout_constraintBottom_toBottomOf="@+id/btnhomeserv"
         app:layout_constraintEnd_toStartOf="@+id/btnuserserv"
-        app:layout_constraintStart_toEndOf="@+id/imghomeserv"
-        app:layout_constraintTop_toTopOf="@+id/imghomeserv"
+        app:layout_constraintStart_toEndOf="@+id/btnhomeserv"
+        app:layout_constraintTop_toTopOf="@+id/btnhomeserv"
         app:srcCompat="@drawable/info"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -78,9 +78,9 @@
         android:background="#00FFFFFF"
         android:contentDescription="@string/descUser"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imghomeserv"
+        app:layout_constraintBottom_toBottomOf="@+id/btnhomeserv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imghomeserv"
+        app:layout_constraintTop_toTopOf="@+id/btnhomeserv"
         app:srcCompat="@drawable/usuario"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
