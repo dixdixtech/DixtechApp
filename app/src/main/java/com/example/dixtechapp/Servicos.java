@@ -11,6 +11,7 @@ public class Servicos extends AppCompatActivity {
     ImageButton btninfo,btnmap, btnuser, btnhome;
     DBHelper meudb;
     ArrayList<String> id_servico, nome_servico, desc_servico;
+    CustomAdapter customAdapter;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,12 @@ public class Servicos extends AppCompatActivity {
         nome_servico = new ArrayList<>();
         desc_servico = new ArrayList<>();
         
-        guardarDadosEmArrays()
+        guardarDadosEmArrays();
+        
+        customAdapter = new CustomAdapter(Servicos.this, id_servico, nome_servico, 
+                                          desc_servico);
+        recycler.setAdapter(customAdapter);
+        recycler.setLayoutManager(new LinearLayout Manager(Servicos.this));
     }
     
     void guardarDadosEmArrays(){
