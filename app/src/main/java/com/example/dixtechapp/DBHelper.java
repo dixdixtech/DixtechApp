@@ -65,6 +65,20 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
+    
+    void addServico(String nome, String desc){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        
+        cv.put("nome_serv", nome);
+        cv.put("desc_serv", desc);
+        long resultado= db.insert("tbl_servico", null, cv);
+        if(resultado==-1){
+            Toast.makeText(context, "Falha ao adicionar", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(context, "Sucesso ao adicionar", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     public Boolean insertFunc(String nome_func, String cpf, String cargo, String senha, String email_func, String data_nasc_func, String tel_func){
         SQLiteDatabase db = this.getWritableDatabase();
