@@ -25,6 +25,7 @@
     <string name="gravar">Gravar</string>
     <string name="adicionar">Adicionar</string>
     <string name="alterar">Alterar</string>
+    <string name="deletar">Deletar</string>
     <string name="ler">Ler</string>
     <string name="descserv">Descrição do Serviço</string>
     <string name="nomeserv">Nome do Serviço</string>
@@ -50,5 +51,6 @@
     <string name="descGravar">Botão de gravação geral</string>
     <string name="descaddserv">Botão de inserção de dados geral</string>
     <string name="descUpdate">Botão de alteração de dados geral</string>
+    <string name="descDelete">Botão de exclusão de dados geral</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>
