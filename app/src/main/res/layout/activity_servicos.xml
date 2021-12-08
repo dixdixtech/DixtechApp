@@ -5,5 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Servicos">
+    
+    <ImageView
+        android:id="@+id/imglogoserv"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/descLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoazulfull" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarserv"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imghomeserv"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/descHome"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbarserv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ImageButton
+        android:id="@+id/btnmapserv"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="100dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descMap"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imghomeserv"
+        app:layout_constraintEnd_toStartOf="@+id/btnuserserv"
+        app:layout_constraintStart_toEndOf="@+id/imghomeserv"
+        app:layout_constraintTop_toTopOf="@+id/imghomeserv"
+        app:srcCompat="@drawable/map"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btninfoserv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="100dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descInfo"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imghomeserv"
+        app:layout_constraintEnd_toStartOf="@+id/btnuserserv"
+        app:layout_constraintStart_toEndOf="@+id/imghomeserv"
+        app:layout_constraintTop_toTopOf="@+id/imghomeserv"
+        app:srcCompat="@drawable/info"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btnuserserv"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="30dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/descUser"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imghomeserv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imghomeserv"
+        app:srcCompat="@drawable/usuario"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
