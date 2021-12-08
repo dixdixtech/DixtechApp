@@ -1,15 +1,26 @@
 package com.example.dixtechapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.Service;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
-public class Sobre extends AppCompatActivity implements SensorEventListener{
+import org.w3c.dom.Text;
+
+public class Sobre extends AppCompatActivity implements SensorEventListener {
     
     ImageButton botaoFace, botaoLinkedin, botaoInsta, btnhome, btnmap, btnuser;
     
@@ -40,7 +51,7 @@ public class Sobre extends AppCompatActivity implements SensorEventListener{
 
         sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-    }
+
 
         btnhome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +66,7 @@ public class Sobre extends AppCompatActivity implements SensorEventListener{
             @Override
             public void onClick(View v) {
 
-                Intent map = new Intent(getApplicationContext(), Mapa.class);
+                Intent map = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(map);
             }
         });
@@ -109,34 +120,7 @@ public class Sobre extends AppCompatActivity implements SensorEventListener{
         btnuser = findViewById(R.id.btnuserinfo);
     }
     
-    public void GravarI(View view) {
-        Intent it = new Intent(this, Gravar.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.INTERNAL);
-        startActivity(it);
-    }
 
-    public void LerI(View view) {
-        Intent it = new Intent(this, Ler.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.INTERNAL);
-        startActivity(it);
-
-    }
-
-
-    public void GravarE(View view) {
-        Intent it = new Intent(this, Gravar.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.EXTERNAL);
-        startActivity(it);
-
-    }
-
-
-    public void LerE(View view) {
-        Intent it = new Intent(this, Ler.class);
-        it.putExtra(Armazenamentos.STORAGE_TYPE, Armazenamentos.Type.EXTERNAL);
-        startActivity(it);
-
-    }
 
     //configurações do sensor
     @Override
@@ -160,14 +144,14 @@ public class Sobre extends AppCompatActivity implements SensorEventListener{
             if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
                 luminosidade = event.values[0];
 
-                if (preferences.getBoolean("Automatic", false) && luminosidade < 20000) {
+                if (preferences.getBoolean("Automatic", false) && luminosidade < 5000) {
                     editor.putBoolean("Preto", true).apply();
 
                     Intent intent = new Intent(Sobre.this, Sobre.class);
                     startActivity(intent);
                     this.overridePendingTransition(0, 0);
                     finish();
-                } else if (preferences.getBoolean("Automatic", false) && luminosidade >= 20000) {
+                } else if (preferences.getBoolean("Automatic", false) && luminosidade >= 5000) {
                     editor.putBoolean("Preto", false).apply();
 
                     Intent intent = new Intent(Sobre.this, Sobre.class);
@@ -186,9 +170,9 @@ public class Sobre extends AppCompatActivity implements SensorEventListener{
 
     public void modoPreto() {
         //LinearLayout linearCabecalho = (LinearLayout) findViewById(R.id.linearCabecalho);
-        Text View txtversao = (TextView) findViewById(R.id.txtversao);
-        Text View txtsobre = (TextView) findViewById(R.id.txtsobre);
-        Toolbar toolbar3 = (Toolbar) findViewById(R.id.toolbar3); 
+        TextView txtversao = (TextView) findViewById(R.id.txtversao);
+        TextView txtsobre = (TextView) findViewById(R.id.txtsobre);
+        Toolbar toolbar3 = (Toolbar) findViewById(R.id.toolbar3);
         /*ImageButton btnlinkedin = (ImageButton) findViewById(R.id.btnlinkedin); 
         ImageButton btninsta = (ImageButton) findViewById(R.id.btninsta); 
         ImageButton btnface = (ImageButton) findViewById(R.id.btnface); 
@@ -197,8 +181,8 @@ public class Sobre extends AppCompatActivity implements SensorEventListener{
             
         constraintback.setBackgroundResource(R.color.black);
         toolbar3.setBackgroundResource(R.color.black);
-        txtversao.setTextColor(getResources().getColor(R.color.black));
-        txtsobre.setTextColor(getResources().getColor(R.color.black));
+        txtversao.setTextColor(getResources().getColor(R.color.white));
+        txtsobre.setTextColor(getResources().getColor(R.color.white));
         /*
         btnlinkedin.setImageResource(R.drawable.linkedin_dark);
         btninsta.setImageResource(R.drawable.instagram_dark);

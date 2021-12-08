@@ -2,6 +2,8 @@ package com.example.dixtechapp;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -9,27 +11,30 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.dixtechapp.databinding.ActivityMapsBinding;
+
+
+import java.io.IOException;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener, GoogleMap.OnMarkerDragListener {
 
     private static final String TAG = "MapsActivity";
     private GoogleMap mMap;
-   private Geocoder geocoder;
+    private Geocoder geocoder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
 
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         geocoder = new Geocoder(this);
+
+
     }
 
    
@@ -57,46 +62,47 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             e.printStackTrace();
         }
     }
-    
+
     @Override
     public void onMapLongClick(LatLng latLng){
+
         try{
-            List<Adrress> addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1);
+            List<Address> addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1);
             if(addresses.size() > 0){
-                Adress adress = adresses.get(0);
-                String streetAdress = adress.getAdressLine(0);
+                Address address = addresses.get(0);
+                String streetAddress = address.getAddressLine(0);
                 mMap.addMarker(new MarkerOptions()
                     .position(latLng)
-                    .title(streetAdress)
-                    .draggable(true)          
+                    .title(streetAddress)
+                    .draggable(true)
                 );
             }
-        } catch (IOExceotion e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
+
     @Override
     public void onMarkerDragStart(Marker marker){
-        
+
     }
-    
+
     @Override
     public void onMarkerDrag(Marker marker){
-        
+
     }
-    
+
     @Override
     public void onMarkerDragEnd(Marker marker){
         LatLng latLng = marker.getPosition();
         try{
-            List<Adrress> addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1);
+            List<Address> addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1);
             if(addresses.size() > 0){
-                Adress adress = adresses.get(0);
-                String streetAdress = adress.getAdressLine(0);
-                marker.setTitle(streetAdress);
+                Address address = addresses.get(0);
+                String streetAddress = address.getAddressLine(0);
+                marker.setTitle(streetAddress);
             }
-        } catch (IOExceotion e){
+        } catch (IOException e){
             e.printStackTrace();
         }
     }
