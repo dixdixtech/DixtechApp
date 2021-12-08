@@ -189,20 +189,22 @@ public class Sobre extends AppCompatActivity implements SensorEventListener{
         Text View txtversao = (TextView) findViewById(R.id.txtversao);
         Text View txtsobre = (TextView) findViewById(R.id.txtsobre);
         Toolbar toolbar3 = (Toolbar) findViewById(R.id.toolbar3); 
-        ImageButton btnlinkedin = (ImageButton) findViewById(R.id.btnlinkedin); 
+        /*ImageButton btnlinkedin = (ImageButton) findViewById(R.id.btnlinkedin); 
         ImageButton btninsta = (ImageButton) findViewById(R.id.btninsta); 
         ImageButton btnface = (ImageButton) findViewById(R.id.btnface); 
-        ImageButton btngithub = (ImageButton) findViewById(R.id.btngithub); 
-        
+        ImageButton btngithub = (ImageButton) findViewById(R.id.btngithub);*/ 
+        ConstraintLayout constraintback = (ConstraintLayout) findViewById(R.id.constraintback);
             
+        constraintback.setBackgroundResource(R.color.black);
         toolbar3.setBackgroundResource(R.color.black);
         txtversao.setTextColor(getResources().getColor(R.color.black));
         txtsobre.setTextColor(getResources().getColor(R.color.black));
+        /*
         btnlinkedin.setImageResource(R.drawable.linkedin_dark);
         btninsta.setImageResource(R.drawable.instagram_dark);
         btnface.setImageResource(R.drawable.facebook_dark);
         btngithub.setImageResource(R.drawable.github_dark);
-        
+        */
     }
 
 }
