@@ -9,7 +9,8 @@ public class Servicos extends AppCompatActivity {
     RecyclerView recycler;
     FloatingActionButton btn_add;
     ImageButton btninfo,btnmap, btnuser, btnhome;
-         
+    DBHelper meudb;
+    ArrayList<String> id_servico, nome_servico, desc_servico;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,28 @@ public class Servicos extends AppCompatActivity {
                 startActivity(add);
             }
         });
-
+        
+        meudb = new.DBHelper(Servicos.this);
+        id_servico = new ArrayList<>();
+        nome_servico = new ArrayList<>();
+        desc_servico = new ArrayList<>();
+        
+        guardarDadosEmArrays()
+    }
+    
+    void guardarDadosEmArrays(){
+        Cursor cursor = meudb.readAllData();
+        if(cursor.getCount() == 0){
+            Toast.makeText(this, "Não há dados").show();
+        }else{
+            while(cursor.moveToNext()){
+                id_servico.add(cursor.getString(0));
+                nome_servico.add(cursor.getString(1));
+                desc_servico.add(cursor.getString(2));
+                
+                
+            }
+        }
     }
     
     private void iniciarComponentes(){
