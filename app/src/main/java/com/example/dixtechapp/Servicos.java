@@ -9,7 +9,7 @@ public class Servicos extends AppCompatActivity {
     RecyclerView recycler;
     FloatingActionButton btn_add;
     ImageButton btninfo,btnmap, btnuser, btnhome;
-    DBHelper meudb;
+    DBHelper db;
     ArrayList<String> id_servico, nome_servico, desc_servico;
     CustomAdapter customAdapter;
     
@@ -17,7 +17,6 @@ public class Servicos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicos);
-        getSupportActionBar().hide();
         iniciarComponentes():
         
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +28,7 @@ public class Servicos extends AppCompatActivity {
             }
         });
         
-        meudb = new.DBHelper(Servicos.this);
+        db = new.DBHelper(Servicos.this);
         id_servico = new ArrayList<>();
         nome_servico = new ArrayList<>();
         desc_servico = new ArrayList<>();
@@ -63,6 +62,53 @@ public class Servicos extends AppCompatActivity {
                 
             }
         }
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.delete_all){
+            confirmaDialogo();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.delete_all){
+            confirmaDialogo();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    
+    void confirmaDialogo(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Deletar Todos?");
+        builder.setMessage("Você tem certeza que quer deletar todos os dados?");
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DBHelper db = new DBHelper(Servicos.this);
+                db.deleteAllData();
+                //Refresh Activity
+                Intent intent = new Intent(Servicos.this, Servicos.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.create().show();
     }
     
     private void iniciarComponentes(){
