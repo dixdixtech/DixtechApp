@@ -23,6 +23,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     holder.txt_id_serv.setText(String.valueOf(id_serv.get(position)));
     holder.txt_nome_serv.setText(String.valueOf(nome_serv.get(position)));
     holder.txt_desc_serv.setText(String.valueOf(desc_serv.get(position)));
+    holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, UpdateServico.class);
+                i.putExtra("id", String.valueOf(id_serv.get(position)));
+                i.putExtra("nome", String.valueOf(nome_serv.get(position)));
+                i.putExtra("desc", String.valueOf(desc_serv.get(position)));
+                activity.startActivityForResult(i, 1);
+            }
+        });
   }
   
   @Override
@@ -32,11 +42,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
   
   public class MyViewHolder extends RecyclerView.ViewHolder{
     TextView txt_id_serv, txt_nome_serv, txt_desc_serv;
+    LinearLayout mainLayout;
     public MyViewHolder(@NonNull View itemView){
       super(itemView);
       txt_id_serv = itemView.findViewById(R.id.txt_id_serv);
       txt_nome_serv= itemView.findViewById(R.id.txt_nome_serv);
       txt_desc_serv= itemView.findViewById(R.id.txt_desc_serv);
+      mainLayout = itemView.findViewById(R.id.mainLayout);
     }
   }
 
