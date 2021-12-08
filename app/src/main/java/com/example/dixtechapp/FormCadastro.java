@@ -58,7 +58,7 @@ public class FormCadastro extends AppCompatActivity {
                             Toast.makeText(FormCadastro.this,"Sócio já cadastrado",Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                        Toast.makeText(FormCadastro.this,"As senhas não combinam entre si",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FormCadastro.this,"As senhas não combinam entre si",Toast.LENGTH_SHORT).show(); 
                     }
                 }
             }
