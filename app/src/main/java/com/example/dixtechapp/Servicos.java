@@ -36,10 +36,18 @@ public class Servicos extends AppCompatActivity {
         
         guardarDadosEmArrays();
         
-        customAdapter = new CustomAdapter(Servicos.this, id_servico, nome_servico, 
+        customAdapter = new CustomAdapter(Servicos.this, this, id_servico, nome_servico, 
                                           desc_servico);
         recycler.setAdapter(customAdapter);
         recycler.setLayoutManager(new LinearLayoutManager(Servicos.this));
+    }
+    
+     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
     
     void guardarDadosEmArrays(){
