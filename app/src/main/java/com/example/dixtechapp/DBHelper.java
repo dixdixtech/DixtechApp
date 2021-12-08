@@ -123,6 +123,133 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     //
     
+    //MÉTODOS PARA A TABELA CLIENTE
+    void addCliente(String cnpj, String nomecli, String telcli, String emailcli, String endereco){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        
+        cv.put("cnpj", cnpj);
+        cv.put("nome_cli", nomecli);
+        cv.put("tel_cli", telcli);
+        cv.put("email_cli", emailcli);
+        cv.put("endereco", endereco);
+        long resultado= db.insert("tbl_cliente", null, cv);
+        if(resultado==-1){
+            Toast.makeText(context, "Falha ao adicionar", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(context, "Sucesso ao adicionar", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    Cursor readAllDataCli(){
+        String query = "SELECT * FROM tbl_cliente";
+        SQLiteDatabase db = this.getReadableDatabase();
+        
+        Cursor cursor = null;
+        if(db != null){
+            db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+    
+    void updateDataCli(String row_id, String cnpj, String nomecli, String telcli, String emailcli, String endereco){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("cnpj", cnpj);
+        cv.put("nome_cli", nomecli);
+        cv.put("tel_cli", telcli);
+        cv.put("email_cli", emailcli);
+        cv.put("endereco", endereco);
+
+        long result = db.update("tbl_cliente", cv, "id_cli=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao alterar", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Alteração feita com sucesso!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    void deleteOneRowCli(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete("tbl_cliente", "id_cli=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao deletar.", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Exclusão feita com sucesso.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void deleteAllDataCli(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + "tbl_cliente");
+    }
+    //
+    
+    //MÉTODOS PARA A TABELA ATIVIDADE
+    void addAtividade(String desc, String dtinic, String dtfinal, String nmcli, String nmfunc, String nmserv){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+       
+        cv.put("desc_atv", desc);
+        cv.put("data_inicial", dtinic);
+        cv.put("data_final", dtfinal);
+        cv.put("nomecli", nmcli);
+        cv.put("nome_func", nmfunc);
+        cv.put("nome_serv", nmserv);
+        long resultado= db.insert("tbl_atividade", null, cv);
+        if(resultado==-1){
+            Toast.makeText(context, "Falha ao adicionar", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(context, "Sucesso ao adicionar", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    Cursor readAllDataAtv(){
+        String query = "SELECT * FROM tbl_atividade";
+        SQLiteDatabase db = this.getReadableDatabase();
+        
+        Cursor cursor = null;
+        if(db != null){
+            db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+    
+    void updateDataAtv(String row_id, String desc, String dtinic, String dtfinal, String nmcli, String nmfunc, String nmserv){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("desc_atv", desc);
+        cv.put("data_inicial", dtinic);
+        cv.put("data_final", dtfinal);
+        cv.put("nomecli", nmcli);
+        cv.put("nome_func", nmfunc);
+        cv.put("nome_serv", nmserv);
+        long result = db.update("tbl_atividade", cv, "id_atv=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao alterar", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Alteração feita com sucesso!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    void deleteOneRowAtv(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete("tbl_atividade", "id_atv=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao deletar.", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Exclusão feita com sucesso.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void deleteAllDataAtv(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + "tbl_atividade");
+    }
+    //
+    
     // MÉTODOS PARA A TABELA FUNCIONARIO
     public Boolean insertFunc(String nome_func, String cpf, String cargo, String senha, String email_func, String data_nasc_func, String tel_func){
         SQLiteDatabase db = this.getWritableDatabase();
