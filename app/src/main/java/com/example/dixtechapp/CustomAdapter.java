@@ -1,9 +1,28 @@
 package com.example.dixtechapp;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
   Context context;
+  private Activity activity;
+  
   private ArrayList id_serv, nome_serv, desc_serv;
-  CustomAdapter(Context context, ArrayList id_serv, ArrayList nome_serv, ArrayList desc_serv,){
+  CustomAdapter(Activity activity, Context context, ArrayList id_serv, ArrayList nome_serv, ArrayList desc_serv,){
     this.context = context;
     this.id_serv = id_serv;
     this.nome_serv = nome_serv;
