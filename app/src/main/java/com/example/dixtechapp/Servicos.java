@@ -39,7 +39,7 @@ public class Servicos extends AppCompatActivity {
         customAdapter = new CustomAdapter(Servicos.this, id_servico, nome_servico, 
                                           desc_servico);
         recycler.setAdapter(customAdapter);
-        recycler.setLayoutManager(new LinearLayout Manager(Servicos.this));
+        recycler.setLayoutManager(new LinearLayoutManager(Servicos.this));
     }
     
     void guardarDadosEmArrays(){
