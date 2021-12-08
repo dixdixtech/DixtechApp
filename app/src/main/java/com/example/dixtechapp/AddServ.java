@@ -20,6 +20,14 @@ public class AddServ extends AppCompatActivity {
         getSupportActionBar().hide();
         iniciarComponentes():
         
+        btnaddserv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              DBHelper db = new DBHelper(AddServ.this);
+              db.addServico(txtnomeserv.getText().toString().toTrim(),
+                           txtdescserv.getText().toString().toTrim());
+            }
+        });
         
 
     }
