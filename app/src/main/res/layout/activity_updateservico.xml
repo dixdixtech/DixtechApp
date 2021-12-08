@@ -63,6 +63,20 @@
         app:layout_constraintStart_toStartOf="@+id/updateServ"
         app:layout_constraintTop_toBottomOf="@+id/edittxt_nm_serv_updt"
         tools:text="@string/alterar" />
+    
+    <Button
+        android:id="@+id/btndeleteserv"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/descDelete"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/updateServ"
+        app:layout_constraintStart_toStartOf="@+id/updateServ"
+        app:layout_constraintTop_toBottomOf="@+id/edittxt_nm_serv_updt"
+        tools:text="@string/deletar" />
 
     <TextView
         android:id="@+id/txtupdtserv"
