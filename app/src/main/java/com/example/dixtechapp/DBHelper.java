@@ -16,8 +16,9 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME="DbDixtech.db";
     private static final int DB_VERSAO = 1;
 
-    public DBHelper(@Nullable Context context) {
+    DBHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSAO);
+        this.context = context;
     }
 
     @Override
@@ -89,6 +90,36 @@ public class DBHelper extends SQLiteOpenHelper {
             db.rawQuery(query, null);
         }
         return cursor;
+    }
+    
+    void updateData(String row_id, String nome, String desc){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("nome_serv", nome);
+        cv.put("desc_serv", desc);
+
+        long result = db.update("tbl_servico", cv, "id_serv=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao alterar", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Alteração feita com sucesso!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete("tbl_servico", "id_serv=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao deletar.", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Exclusão feita com sucesso.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void deleteAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + "tbl_servico");
     }
     //
     
