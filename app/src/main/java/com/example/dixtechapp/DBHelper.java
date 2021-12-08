@@ -47,9 +47,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_DTINIC_ATV = "data_inicial";
     public static final String COLUMN_DTFINAL_ATV = "data_final";
 
-    
-    private Context context;
-    
     //nome e versão do db
     private static final String DB_NAME="DbDixtech.db";
     private static final int DB_VERSAO = 1;
@@ -89,8 +86,8 @@ public class DBHelper extends SQLiteOpenHelper {
         String atividade = "CREATE TABLE" + tbl_atividade + "(" +
             COLUMN_ID_ATV + "INTERGER primary key autoincrement," +
             COLUMN_DESC_ATV + "TEXT NOT NULL," +
-            COLUMN_DTINIC_ATV + "TEXT NOT NULL," +
-            COLUMN_DTFINAL_ATV + "TEXT NOT NULL," +
+            COLUMN_DTINIC_ATV + "DATE NOT NULL," +
+            COLUMN_DTFINAL_ATV + "DATE NOT NULL," +
             COLUMN_NOME_SERV + "TEXT NOT NULL," +
             "FOREIGN KEY (" + COLUMN_NOME_SERV + ") references" + SERVICO_TABLE_NAME + "(" + COLUMN_NOME_SERV + ")"+
             ");";
@@ -122,8 +119,70 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
     
-    // MÉTODOS PARA A TABELA FUNCIONARIO
+    // ------------------MÉTODOS PARA A TABELA FUNCIONARIO----------------------------
     
+    //VALIDAÇÃO DE FUNCIONARIO
+    public Funcionario ValidaFunc(String email, String senha){
+
+        SQLiteDatabase db=this.getWritableDatabase();
+
+        Cursor cursor=db.query(FUNCIONARIO_TABLE_NAME,
+                new String[]{(COLUMN_ID_FUNC)},
+                COLUMN_EMAIL_FUNC+"=? AND "+ COLUMN_SENHA_FUNC+ "=?" ,new String[]{email,senha},null, null, null, String.valueOf(1));
+        if(cursor!=null && cursor.getCount()>0){
+            cursor.moveToFirst();
+        }
+
+        return new Funcionario(Integer.parseInt(cursor.getString(0)));
+    }
+    
+    //SELECT DO FUNCIONÁRIO
+    Funcionario selectFuncio(int codFunc){
+        SQLiteDatabase db=this.getReadableDatabase();
+
+        Cursor cursor=db.query(FUNCIONARIO_TABLE_NAME,
+                new String[]{COLUMN_ID_FUNC, COLUMN_NOME_FUNC, COLUMN_CPF_FUNC, COLUMN_CARGO_FUNC, COLUMN_SENHA_FUNC, COLUMN_EMAIL_FUNC, COLUMN_TEL_FUNC},
+                COLUMN_ID_FUNC+"=?",new String[]{String.valueOf(codFunc)},null, null, null, null, null, null);
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+
+        return new Funcionario(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2),
+                cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
+    }
+
+    //INSERT DE FUNCIONÁRIO
+    void addFuncionario(Funcionario funcionario){
+        SQLiteDatabase db=this.getWritableDatabase();
+            
+        ContentValues values= new ContentValues();
+        values.put(COLUMN_NOME_FUNC, funcionario.getNomeFunc());
+        values.put(COLUMN_TEL_FUNC, funcionario.getTelFunc());
+        values.put(COLUMN_CPF_FUNC, funcionario.getCpfFunc());
+        values.put(COLUMN_CARGO_FUNC, funcionario.getCargoFunc());
+        values.put(COLUMN_EMAIL_FUNC, funcionario.getEmailFunc());
+        values.put(COLUMN_SENHA_FUNC, funcionario.getSenhaFunc());
+        
+        db.insert(FUNCIONARIO_TABLE_NAME, null, values);
+        db.close();
+    }
+
+    //UPDATE DE FUNCIONÁRIOS
+    void updateFuncio(Funcionario funcionario){
+        SQLiteDatabase db=this.getWritableDatabase();
+
+        ContentValues values= new ContentValues();
+
+        values.put(COLUMN_NOME_FUNC, funcionario.getNomeFunc());
+        values.put(COLUMN_TEL_FUNC, funcionario.getTelFunc());
+        values.put(COLUMN_CPF_FUNC, funcionario.getCpfFunc());
+        values.put(COLUMN_CARGO_FUNC, funcionario.getCargoFunc());
+        values.put(COLUMN_EMAIL_FUNC, funcionario.getEmailFunc());
+        values.put(COLUMN_SENHA_FUNC, funcionario.getSenhaFunc());
+
+        db.update(FUNCIONARIO_TABLE_NAME, values, COLUMN_ID_FUNC + "= ?",
+                new String[]{String.valueOf(funcionario.getIdFunc()) });
+    }
     //
     
     //MÉTODOS PARA A TABELA SERVICO
