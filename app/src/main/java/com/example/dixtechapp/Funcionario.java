@@ -1,93 +1,106 @@
 package com.example.dixtechapp;
 
 public class Funcionario {
-    int idFunc;
-    String EmailFunc;
-    String SenhaFunc;
-    String NomeFunc;
-    String CargoFunc;
-    String CpfFunc;
+    int id_func;
+    String nome_func;
+    String cpf;
+    String cargo;
+    String senha;
+    String email_func;
+    String tel_func;
 
 
     public Funcionario(){
 
     }
 
-    public Funcionario(int VidFunc){
-        this.idFunc=VidFunc;
+    public Funcionario(int v_id_func){
+        this.id_func=v_id_func;
     }
 
 
-    //update
-    public Funcionario(int VidFunc, String VEmailFunc, String VSenhaFunc, String VNomeFunc, String VCargoFunc, String VCpfFunc){
-        this.idFunc=VidFunc;
-        this.EmailFunc=VEmailFunc;
-        this.SenhaFunc=VSenhaFunc;
-        this.NomeFunc=VNomeFunc;
-        this.CargoFunc=VCargoFunc;
-        this.CpfFunc=VCpfFunc;
+    //PARA O UPDATE
+    public Funcionario(int v_id_func, String v_nome_func, String v_cpf, String v_cargo, String v_senha, String v_email_func, String v_tel_func){
+        this.id_func=v_id_func;
+        this.nome_func=v_nome_func;
+        this.cpf=v_cpf;
+        this.cargo=v_cargo;
+        this.senha=v_senha;
+        this.email_func=v_email_func;
+        this.tel_func=v_tel_func;
     }
 
-    //insert
-    public Funcionario(String VEmailFunc, String VSenhaFunc, String VNomeFunc, String VCargoFunc, String VCpfFunc){
-        this.EmailFunc=VEmailFunc;
-        this.SenhaFunc=VSenhaFunc;
-        this.NomeFunc=VNomeFunc;
-        this.CargoFunc=VCargoFunc;
-        this.CpfFunc=VCpfFunc;
+    //PARA O INSERT
+    public Funcionario(String v_nome_func, String v_cpf, String v_cargo, String v_senha, String v_email_func, String v_tel_func){
+        this.nome_func=v_nome_func;
+        this.cpf=v_cpf;
+        this.cargo=v_cargo;
+        this.senha=v_senha;
+        this.email_func=v_email_func;
+        this.tel_func=v_tel_func;
 
     }
 
 
-    //============================================
+    //GETS E SETS PARA SEREM USADOS EXTERNAMENTE
 
+    //ID
     public int getIdFunc() {
-        return idFunc;
+        return id_func;
     }
-    public void setIdFunc(int idFunc) {
-        this.idFunc = idFunc;
+    public void setIdFunc(int id_func) {
+        this.id_func = id_func;
     }
-
-
-    public String getEmailFunc() {
-        return EmailFunc;
-    }
-    public void setEmailFunc(String emailFunc) {
-        EmailFunc = emailFunc;
-    }
-
-
-    public String getSenhaFunc() {
-        return SenhaFunc;
-    }
-    public void setSenhaFunc(String senhaFunc) {
-        SenhaFunc = senhaFunc;
-    }
-
-
+    
+    //NOME
     public String getNomeFunc() {
-        return NomeFunc;
+        return nome_func;
     }
-    public void setNomeFunc(String nomeFunc) {
-        NomeFunc = nomeFunc;
+    public void setNomeFunc(String nomefunc) {
+        nome_func = nomefunc;
     }
-
-
+    
+    //CPF
+    public String getCpfFunc() {
+        return cpf;
+    }
+    public void setCpfFunc(String cpffunc) {
+        cpf = cpffunc;
+    }
+    
+    //CARGO
     public String getCargoFunc() {
-        return CargoFunc;
+        return cargo;
     }
     public void setCargoFunc(String cargoFunc) {
-        CargoFunc = cargoFunc;
+        cargo = cargoFunc;
+    }
+    
+    //SENHA
+    
+    public String getSenhaFunc() {
+        return senha;
+    }
+    public void setSenhaFunc(String senhaFunc) {
+        senha = senhaFunc;
+    }
+    
+    //EMAIL
+    public String getEmailFunc() {
+        return email_func;
+    }
+    public void setEmailFunc(String emailfunc) {
+        email_func = emailfunc;
+    }
+    
+    //TEL
+    public String getTelFunc() {
+        return tel_func;
+    }
+    public void setEmailFunc(String telfunc) {
+        tel_func = telfunc;
     }
 
-
-    public String getCpfFunc() {
-        return CpfFunc;
     }
-    public void setCpfFunc(String cpfFunc) {
-        CargoFunc = cpfFunc;
-    }
-
-
 
 }
