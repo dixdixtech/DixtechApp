@@ -32,16 +32,29 @@ public class FormLogin extends AppCompatActivity {
                 String cpf = editTextCpf.getText().toString();
                 String senha = editTextSenha.getText().toString();
 
-                if(TextUtils.isEmpty(cpf) || TextUtils.isEmpty(senha))
-                    Toast.makeText(FormLogin.this,"Todos os campos são requeridos",Toast.LENGTH_SHORT).show();
+                if(cpf.isEmpty() ||senha.isEmpty()){
+                    Toast.makeText(FormLogin.this, "Campos Obrigatorios", Toast.LENGTH_LONG).show();
+                }
+
                 else{
-                    Boolean checar = DB.checkcpfsenha(cpf, senha);
-                    if(checar==true){
-                        Toast.makeText(FormLogin.this,"Login feito com sucesso!",Toast.LENGTH_SHORT).show();
-                        Intent login = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(login);
-                    }else{
-                        Toast.makeText(FormLogin.this,"Falha ao logar",Toast.LENGTH_SHORT).show();
+                    //valida o login e sneha
+                    Funcionario funcionario= DB.ValidaFunc(cpf,senha);
+
+                    //se for valido
+                    if(funcionario !=null){
+                        int codFunc=funcionario.getIdFunc();
+
+                        //mandando o cod para tela de conta
+                        Intent intent = new Intent(getApplicationContext(), Usuario.class);
+                        intent.putExtra("codFunc",codFunc);
+                        startActivity(intent);
+
+                        //abre home
+                        Intent home = new Intent(getApplicationContext(), Usuario.class);
+                        startActivity(home);
+                    }
+                    else{
+                        Toast.makeText(FormLogin.this, "Login E Senha não existe", Toast.LENGTH_LONG).show();
                     }
                 }
             }

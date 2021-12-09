@@ -97,24 +97,6 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editdatanasc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:drawableEnd="@drawable/ic_cake"
-        android:ems="10"
-        android:hint="@string/dataNasc"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:textColor="@color/grey100"
-        android:textColorHint="@color/grey200"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editnome"
-        app:layout_constraintStart_toStartOf="@+id/editnome"
-        app:layout_constraintTop_toBottomOf="@+id/edittelefone"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
         android:id="@+id/editcargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -129,7 +111,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/editnome"
         app:layout_constraintStart_toStartOf="@+id/editnome"
-        app:layout_constraintTop_toBottomOf="@+id/editdatanasc"
+        app:layout_constraintTop_toBottomOf="@+id/edittelefone"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText

@@ -25,9 +25,7 @@ public class AddServ extends AppCompatActivity {
         btnaddserv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              DBHelper db = new DBHelper(AddServ.this);
-              db.addServico(txtnomeserv.getText().toString().trim(),
-                           txtdescserv.getText().toString().trim());
+
             }
         });
         

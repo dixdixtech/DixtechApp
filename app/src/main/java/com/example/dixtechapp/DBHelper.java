@@ -53,13 +53,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     DBHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSAO);
-        this.context = context;
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String func = "CREATE TABLE" + FUNCIONARIO_TABLE_NAME + "(" +
+        String func = "CREATE TABLE " + FUNCIONARIO_TABLE_NAME + "(" +
             COLUMN_ID_FUNC + "INTEGER primary key autoincrement," + 
             COLUMN_NOME_FUNC + "TEXT NOT NULL," + 
             COLUMN_CPF_FUNC + "TEXT NOT NULL UNIQUE," +
@@ -69,7 +69,7 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_TEL_FUNC + "TEXT NOT NULL UNIQUE"+
             ");";
 
-        String cliente = "CREATE TABLE" + CLIENTE_TABLE_NAME + "(" +
+        String cliente = "CREATE TABLE " + CLIENTE_TABLE_NAME + "(" +
             COLUMN_ID_CLIENTE + "INTEGER primary key autoincrement," +
             COLUMN_CNPJ_CLIENTE + "TEXT NOT NULL UNIQUE," +
             COLUMN_NOME_CLIENTE + "TEXT NOT NULL," +
@@ -78,18 +78,18 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_END_CLIENTE + "TEXT NOT NULL" + 
             ");";
 
-        String servico = "CREATE TABLE" + SERVICO_TABLE_NAME + "(" +
+        String servico = "CREATE TABLE " + SERVICO_TABLE_NAME + "(" +
             COLUMN_ID_SERV + "INTERGER primary key autoincrement," +
-            COLUMN_NOME_SERV + "TEXT NOT NULL," + 
+            COLUMN_NOME_SERV + "TEXT NOT NULL" +
             ");";
 
-        String atividade = "CREATE TABLE" + tbl_atividade + "(" +
+        String atividade = "CREATE TABLE " + ATIVIDADE_TABLE_NAME + "(" +
             COLUMN_ID_ATV + "INTERGER primary key autoincrement," +
             COLUMN_DESC_ATV + "TEXT NOT NULL," +
             COLUMN_DTINIC_ATV + "DATE NOT NULL," +
             COLUMN_DTFINAL_ATV + "DATE NOT NULL," +
             COLUMN_NOME_SERV + "TEXT NOT NULL," +
-            "FOREIGN KEY (" + COLUMN_NOME_SERV + ") references" + SERVICO_TABLE_NAME + "(" + COLUMN_NOME_SERV + ")"+
+            "FOREIGN KEY (" + COLUMN_NOME_SERV + ") references " + SERVICO_TABLE_NAME + "(" + COLUMN_NOME_SERV + ")"+
             ");";
                
 
@@ -100,22 +100,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    @Override
-    public void onOpen(SQLiteDatabase db){
-        super.onOpen(db);
-        if(!db.isReadOnly()){
-            db.execSQL("PRAGMA foreign_keys=ON;");
-        }
-    }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
-        db.execSQL("DROP TABLE IF EXISTS tbl_func");
-        db.execSQL("DROP TABLE IF EXISTS tbl_cliente");
-        db.execSQL("DROP TABLE IF EXISTS tbl_servico");
-        db.execSQL("DROP TABLE IF EXISTS tbl_atividade");
-        onCreate(db);
+
 
     }
     
@@ -128,7 +118,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Cursor cursor=db.query(FUNCIONARIO_TABLE_NAME,
                 new String[]{(COLUMN_ID_FUNC)},
-                COLUMN_EMAIL_FUNC+"=? AND "+ COLUMN_SENHA_FUNC+ "=?" ,new String[]{email,senha},null, null, null, String.valueOf(1));
+                COLUMN_CPF_FUNC+"=? AND "+ COLUMN_SENHA_FUNC+ "=?" ,new String[]{email,senha},null, null, null, String.valueOf(1));
         if(cursor!=null && cursor.getCount()>0){
             cursor.moveToFirst();
         }
@@ -142,7 +132,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Cursor cursor=db.query(FUNCIONARIO_TABLE_NAME,
                 new String[]{COLUMN_ID_FUNC, COLUMN_NOME_FUNC, COLUMN_CPF_FUNC, COLUMN_CARGO_FUNC, COLUMN_SENHA_FUNC, COLUMN_EMAIL_FUNC, COLUMN_TEL_FUNC},
-                COLUMN_ID_FUNC+"=?",new String[]{String.valueOf(codFunc)},null, null, null, null, null, null);
+                COLUMN_ID_FUNC+"=?",new String[]{String.valueOf(codFunc)},null, null, null, null);
         if(cursor!=null){
             cursor.moveToFirst();
         }

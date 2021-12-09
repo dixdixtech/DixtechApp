@@ -51,6 +51,8 @@ public class Funcionario {
     public void setIdFunc(int id_func) {
         this.id_func = id_func;
     }
+
+
     
     //NOME
     public String getNomeFunc() {
@@ -59,6 +61,8 @@ public class Funcionario {
     public void setNomeFunc(String nomefunc) {
         nome_func = nomefunc;
     }
+
+
     
     //CPF
     public String getCpfFunc() {
@@ -67,6 +71,8 @@ public class Funcionario {
     public void setCpfFunc(String cpffunc) {
         cpf = cpffunc;
     }
+
+
     
     //CARGO
     public String getCargoFunc() {
@@ -75,7 +81,9 @@ public class Funcionario {
     public void setCargoFunc(String cargoFunc) {
         cargo = cargoFunc;
     }
-    
+
+
+
     //SENHA
     
     public String getSenhaFunc() {
@@ -84,6 +92,8 @@ public class Funcionario {
     public void setSenhaFunc(String senhaFunc) {
         senha = senhaFunc;
     }
+
+
     
     //EMAIL
     public String getEmailFunc() {
@@ -92,15 +102,15 @@ public class Funcionario {
     public void setEmailFunc(String emailfunc) {
         email_func = emailfunc;
     }
+
+
     
     //TEL
     public String getTelFunc() {
         return tel_func;
     }
-    public void setEmailFunc(String telfunc) {
+    public void setTelFunc(String telfunc) {
         tel_func = telfunc;
-    }
-
     }
 
 }

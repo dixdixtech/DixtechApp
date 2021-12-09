@@ -59,7 +59,6 @@ public class FormCadastro extends AppCompatActivity {
 
         editTextCpf.addTextChangedListener(MaskEditUntil.mask(editTextCpf, MaskEditUntil.FORMAT_CPF));
         editTextFone.addTextChangedListener(MaskEditUntil.mask(editTextFone, MaskEditUntil.FORMAT_FONE));
-        editTextDataN.addTextChangedListener(MaskEditUntil.mask(editTextDataN, MaskEditUntil.FORMAT_DATE));
     }
 
     private void IniciarComponentes(){
@@ -75,7 +74,7 @@ public class FormCadastro extends AppCompatActivity {
     }
     
     public void TelaInic(){
-        Intent inic = new Intent(getApplicationContext(), MainActvity.class);
+        Intent inic = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(inic);
         finish();
     }
