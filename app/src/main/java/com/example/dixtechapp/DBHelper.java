@@ -5,10 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.dixtechapp.Classes.Funcionario;
 
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -172,19 +172,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.update(FUNCIONARIO_TABLE_NAME, values, COLUMN_ID_FUNC + "= ?",
                 new String[]{String.valueOf(funcionario.getIdFunc()) });
     }
-    //
-    
-    //MÉTODOS PARA A TABELA SERVICO
-    
-    //
 
-    //MÉTODOS PARA A TABELA CLIENTE
-    
-    //
-
-    //MÉTODOS PARA A TABELA ATIVIDADE
-    
-    //
 
     
 }

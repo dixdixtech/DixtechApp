@@ -1,4 +1,4 @@
-package com.example.dixtechapp;
+package com.example.dixtechapp.Classes;
 
 public class Funcionario {
     int id_func;

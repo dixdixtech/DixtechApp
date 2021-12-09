@@ -20,7 +20,7 @@ public class Usuario extends AppCompatActivity {
 
 ImageButton btnhome, btnmap, btninfo, btnfoto;
 ImageView imgviewfoto;
-Button btnbio, btnlogout;
+Button btnbio, btnlogoff;
 
 
     @Override
@@ -81,6 +81,15 @@ Button btnbio, btnlogout;
             }
         });
 
+        btnlogoff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent logoff = new Intent(getApplicationContext(), FormLogin.class);
+                startActivity(logoff);
+            }
+
+        });
 
 
     }
@@ -118,9 +127,9 @@ Button btnbio, btnlogout;
         btnmap = findViewById(R.id.btnmapuser);
         btninfo = findViewById(R.id.btninfouser);
         btnbio = findViewById(R.id.btnbio);
-        btnlogout = findViewById(R.id.btnlogoff);
         btnfoto = findViewById(R.id.btnfotouser);
         imgviewfoto = findViewById(R.id.btnfotouser);
+        btnlogoff = findViewById(R.id.btnlogoff);
     }
 
 
