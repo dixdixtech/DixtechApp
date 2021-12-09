@@ -60,7 +60,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String func = "CREATE TABLE " + FUNCIONARIO_TABLE_NAME + "(" +
-            COLUMN_ID_FUNC + "INTEGER primary key autoincrement," + 
+            COLUMN_ID_FUNC + "INTEGER primary key," +
             COLUMN_NOME_FUNC + "TEXT NOT NULL," + 
             COLUMN_CPF_FUNC + "TEXT NOT NULL UNIQUE," +
             COLUMN_CARGO_FUNC + "TEXT NOT NULL," + 
@@ -70,7 +70,7 @@ public class DBHelper extends SQLiteOpenHelper {
             ");";
 
         String cliente = "CREATE TABLE " + CLIENTE_TABLE_NAME + "(" +
-            COLUMN_ID_CLIENTE + "INTEGER primary key autoincrement," +
+            COLUMN_ID_CLIENTE + "INTEGER primary key," +
             COLUMN_CNPJ_CLIENTE + "TEXT NOT NULL UNIQUE," +
             COLUMN_NOME_CLIENTE + "TEXT NOT NULL," +
             COLUMN_TEL_CLIENTE + "TEXT NOT NULL UNIQUE," +
@@ -79,19 +79,18 @@ public class DBHelper extends SQLiteOpenHelper {
             ");";
 
         String servico = "CREATE TABLE " + SERVICO_TABLE_NAME + "(" +
-            COLUMN_ID_SERV + "INTERGER primary key autoincrement," +
+            COLUMN_ID_SERV + "INTEGER primary key," +
             COLUMN_NOME_SERV + "TEXT NOT NULL" +
             ");";
 
         String atividade = "CREATE TABLE " + ATIVIDADE_TABLE_NAME + "(" +
-            COLUMN_ID_ATV + "INTERGER primary key autoincrement," +
+            COLUMN_ID_ATV + "INTEGER primary key," +
             COLUMN_DESC_ATV + "TEXT NOT NULL," +
             COLUMN_DTINIC_ATV + "DATE NOT NULL," +
             COLUMN_DTFINAL_ATV + "DATE NOT NULL," +
-            COLUMN_NOME_SERV + "TEXT NOT NULL," +
-            "FOREIGN KEY (" + COLUMN_NOME_SERV + ") references " + SERVICO_TABLE_NAME + "(" + COLUMN_NOME_SERV + ")"+
+            COLUMN_NOME_SERV + "TEXT NOT NULL" +
             ");";
-               
+
 
         db.execSQL(func);
         db.execSQL(cliente);
