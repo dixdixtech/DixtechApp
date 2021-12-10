@@ -4,7 +4,14 @@ Aplicativo _mobile_ feito em _Java_ para a empresa _start-up_. Nele um sócio da
 O _SQLite_ foi usado para fazer o banco de dados do _app_. 
 Todos os autores estão cientes de todas as implementações feitas no projeto.
 
-*prints do projeto, quando terminado a gente coloca*
+<div align="center">
+  
+<img src="https://user-images.githubusercontent.com/85706018/145500516-71bfd4c9-0595-4733-84a2-fed98e9f6c28.jpeg" width="200px"/>
+  
+</div>
+
+
+
 
 Autores:
 Arthur Renan Gutierrez Dias Pereira [**https://github.com/arthurrenan00]
